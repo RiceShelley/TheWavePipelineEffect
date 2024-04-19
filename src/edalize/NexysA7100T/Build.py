@@ -21,7 +21,7 @@
 # SOFTWARE.
 
 import os
-from edalize import *
+from edalize import edatool
 
 local_verilog_files = list(
     map(
@@ -77,7 +77,7 @@ edam = {
 }
 
 tool = "vivado"
-backend = get_edatool(tool)(edam=edam, work_root=work_root)
+backend = edatool.get_edatool(tool)(edam=edam, work_root=work_root)
 
 os.makedirs(name=work_root, exist_ok=True)
 backend.configure()
